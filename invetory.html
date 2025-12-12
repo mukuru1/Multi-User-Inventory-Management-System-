@@ -38,4 +38,29 @@
                 </div>
             <button id="addItemBtn" class="btn btn-primary">+ Add New Item</button>
         </div>
+
+         <div class="inventory-table">
+            <table id="inventoryTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="inventoryBody">
+                </tbody>
+            </table>
+            <div id="emptyState" class="empty-state" style="display: none;">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 7h-9M14 17H5M5 7c0 4.97 4.03 9 9 9"></path>
+                    <circle cx="12" cy="12" r="10"></circle>
+                </svg>
+                <h2>No items found</h2>
+                <p>Start by adding your first inventory item</p>
+            </div>
+        </div>
+    </div>
     
