@@ -100,6 +100,11 @@ body {
   background: var(--border-color);
 }
 
+.user-info {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
 .btn { 
   cursor:pointer; 
   border: none; 
