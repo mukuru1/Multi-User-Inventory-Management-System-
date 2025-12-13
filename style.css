@@ -195,3 +195,12 @@ th, td {
 .modal.show { 
   display:flex 
 }
+
+.modal-content { 
+  background:var(--bg-primary); 
+  width:420px; 
+  max-width:94%; 
+  border-radius:8px; 
+  padding:1rem; 
+  box-shadow: 0 10px 40px rgba(0,0,0,0.25); 
+}
