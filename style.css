@@ -112,7 +112,7 @@ body {
 }
 
 .user-info {
-  color: var(--text-secondary);
+  color: #ffffff;
   font-size: 14px;
 }
 
@@ -530,35 +530,7 @@ tbody tr:hover {
   color: var(--text-primary);
 }
 
-.tab {
-  padding: 12px 24px;
-  background: none;
-  border: none;
-  border-bottom: 2px solid transparent;
-  color: var(--text-secondary);
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-bottom: -2px;
-}
 
-.tab:hover {
-  color: var(--text-primary);
-}
-
-.tab.active {
-  color: var(--primary);
-  border-bottom-color: var(--primary);
-}
-
-.tab-content {
-  display: none;
-}
-
-.tab-content.active {
-  display: block;
-}
 
 /* Dark theme */
 body.dark { 
@@ -569,5 +541,21 @@ body.dark {
   --text-secondary: #9fb0c8; 
   --border-color: rgba(255,255,255,0.08); 
   --shadow: rgba(2,6,23,0.6); 
+}
+
+[data-theme="dark"] {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --bg-tertiary: #404040;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --border-color: #404040;
+  --shadow: rgba(255, 255, 255, 0.1);
+  --success: #2ecc71;
+  --danger: #e74c3c;
+  --warning: #f39c12;
+  --info: #3498db;
+  --primary: #3498db;
+  --primary-hover: #2980b9;
 }
 
