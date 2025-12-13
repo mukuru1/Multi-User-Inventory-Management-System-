@@ -89,3 +89,13 @@ body {
   border-radius:10px; 
   box-shadow: 0 6px 18px var(--shadow); 
 }
+
+.auth-card h1 { 
+  margin-top:0 
+}
+
+.form-group { 
+  margin-bottom:0.75rem; 
+  display:flex; 
+  flex-direction:column; 
+}
