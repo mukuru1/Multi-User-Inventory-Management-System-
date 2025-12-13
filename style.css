@@ -39,7 +39,9 @@ body {
   background: var(--bg-primary);
   color: var(--text-primary);
   -webkit-font-smoothing:antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 
 .header { 
   background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%); 
@@ -107,6 +109,8 @@ body {
   padding:1.25rem; 
   border-radius:10px; 
   box-shadow: 0 6px 18px var(--shadow); 
+  max-width: 450px;
+  transition: background-color 0.3s ease;
 }
 
 .auth-card h1 { 
