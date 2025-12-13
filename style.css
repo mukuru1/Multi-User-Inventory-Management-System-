@@ -124,3 +124,8 @@ input[type=text], input[type=password], input[type=number], input[type=tel], sel
   border-radius:6px; 
   display:none 
 }
+
+.alert.show { 
+  display:block 
+}
+
