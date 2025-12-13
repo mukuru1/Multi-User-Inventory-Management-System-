@@ -109,6 +109,10 @@ body {
   color: white;
 }
 
+.btn-success:hover {
+  opacity: 0.9;
+}
+
 .btn:hover { 
   opacity:0.95
  }
