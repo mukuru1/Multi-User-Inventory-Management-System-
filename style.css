@@ -462,6 +462,11 @@ tbody tr:hover {
   justify-content:space-between; 
 }
 
+.modal-header h2 {
+  margin: 0;
+  color: var(--text-primary);
+}
+
 .close-modal { 
   background:transparent; 
   border:none; 
