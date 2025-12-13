@@ -144,6 +144,10 @@ body {
   font-weight: 500;
 }
 
+.auth-link a:hover {
+  text-decoration: underline;
+}
+
 .auth-container { 
   min-height:80vh; 
   display:flex; 
