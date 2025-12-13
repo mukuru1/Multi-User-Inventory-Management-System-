@@ -26,3 +26,12 @@ body {
   background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%); 
   color: #fff; padding: 1rem 0; 
 }
+
+.header .header-content { 
+  max-width: 1000px; 
+  margin: 0 auto; 
+  display:flex; 
+  align-items:center; 
+  justify-content:space-between; 
+  padding:0 1rem; 
+}
