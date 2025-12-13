@@ -424,6 +424,11 @@ tbody tr:hover {
   color:var(--text-secondary); 
 }
 
+.empty-state svg {
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
 .modal { 
   position:fixed; 
   inset:0; 
