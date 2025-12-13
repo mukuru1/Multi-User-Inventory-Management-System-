@@ -100,6 +100,10 @@ body {
   color: var(--text-primary);
 }
 
+.btn-secondary:hover {
+  background-color: var(--border-color);
+}
+
 .btn:hover { 
   opacity:0.95
  }
