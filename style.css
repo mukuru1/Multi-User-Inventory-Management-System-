@@ -372,6 +372,14 @@ th, td {
   color: var(--text-primary);
 }
 
+tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+  background-color: var(--bg-secondary);
+}
+
 .empty-state { 
   text-align:center; 
   padding:1.5rem; 
