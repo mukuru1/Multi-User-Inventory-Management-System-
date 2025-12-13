@@ -138,6 +138,12 @@ body {
   color: var(--text-secondary);
 }
 
+.auth-link a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
 .auth-container { 
   min-height:80vh; 
   display:flex; 
