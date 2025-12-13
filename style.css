@@ -319,6 +319,11 @@ input[type=text], input[type=password], input[type=number], input[type=tel], sel
   align-items:center; 
   gap:1rem; 
   margin-bottom:1rem; 
+   background: var(--bg-primary);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px var(--shadow);
 }
 
 .search-filter-group { 
