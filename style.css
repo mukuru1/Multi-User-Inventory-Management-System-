@@ -138,3 +138,11 @@ input[type=text], input[type=password], input[type=number], input[type=tel], sel
   background: #f8d7da; 
   color:#842029; 
 }
+
+.inventory-controls { 
+  display:flex; 
+  justify-content:space-between; 
+  align-items:center; 
+  gap:1rem; 
+  margin-bottom:1rem; 
+}
