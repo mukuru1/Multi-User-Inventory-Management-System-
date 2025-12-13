@@ -83,6 +83,19 @@ body {
   align-items:center; 
 }
 
+.theme-toggle {
+  background: var(--bg-tertiary);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s ease;
+}
+
 .btn { 
   cursor:pointer; 
   border: none; 
