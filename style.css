@@ -165,3 +165,14 @@ input[type=text], input[type=password], input[type=number], input[type=tel], sel
   border-radius:8px; 
   box-shadow: 0 6px 18px var(--shadow); 
 }
+
+table { 
+  width:100%; 
+  border-collapse:collapse; 
+}
+
+th, td { 
+  padding:0.6rem 0.5rem; 
+  text-align:left; 
+  border-bottom:1px solid var(--border-color); 
+}
