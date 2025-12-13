@@ -176,3 +176,9 @@ th, td {
   text-align:left; 
   border-bottom:1px solid var(--border-color); 
 }
+
+.empty-state { 
+  text-align:center; 
+  padding:1.5rem; 
+  color:var(--text-secondary); 
+}
