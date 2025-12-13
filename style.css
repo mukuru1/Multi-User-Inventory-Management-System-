@@ -471,7 +471,16 @@ tbody tr:hover {
   background:transparent; 
   border:none; 
   font-size:1.5rem; 
-  cursor:pointer 
+  cursor:pointer ;
+  color: var(--text-secondary);
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
 }
 
 /* Dark theme */
