@@ -129,3 +129,12 @@ input[type=text], input[type=password], input[type=number], input[type=tel], sel
   display:block 
 }
 
+.alert.success { 
+  background: #d1e7dd; 
+  color:#0f5132; 
+}
+
+.alert.error { 
+  background: #f8d7da; 
+  color:#842029; 
+}
