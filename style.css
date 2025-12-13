@@ -89,6 +89,12 @@ body {
   width: 100%;
 }
 
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
 .btn:hover { 
   opacity:0.95
  }
