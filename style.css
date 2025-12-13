@@ -54,6 +54,15 @@ body {
   transition: background-color 0.3s ease;
 }
 
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .header .header-content { 
   max-width: 1000px; 
   margin: 0 auto; 
