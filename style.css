@@ -344,6 +344,11 @@ input[type=text], input[type=password], input[type=number], input[type=tel], sel
   color: var(--text-primary);
 }
 
+.search-box:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
 .inventory-table { 
   background:var(--bg-secondary); 
   padding:1rem; 
