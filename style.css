@@ -517,6 +517,19 @@ tbody tr:hover {
   transform: translateY(-4px);
 }
 
+.stat-card h3 {
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.stat-card .stat-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
 /* Dark theme */
 body.dark { 
   --bg-primary: #0f1724; 
