@@ -127,6 +127,13 @@ body {
   flex-direction:column; 
 }
 
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
 label { 
   font-size:0.9rem; 
   margin-bottom:0.25rem; 
