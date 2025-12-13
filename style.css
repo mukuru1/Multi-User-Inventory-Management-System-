@@ -40,3 +40,9 @@ body {
   margin:0; 
   font-size:1.2rem; 
 }
+
+.header-actions { 
+  display:flex; 
+  gap:0.5rem; 
+  align-items:center; 
+}
