@@ -104,6 +104,11 @@ body {
   background-color: var(--border-color);
 }
 
+.btn-success {
+  background-color: var(--success);
+  color: white;
+}
+
 .btn:hover { 
   opacity:0.95
  }
