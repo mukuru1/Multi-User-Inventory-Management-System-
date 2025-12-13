@@ -329,7 +329,9 @@ input[type=text], input[type=password], input[type=number], input[type=tel], sel
 .search-filter-group { 
   display:flex; 
   gap:0.5rem; 
-  align-items:center 
+  align-items:center;
+  grid-template-columns: 1fr 1fr; 
+  margin-bottom: 15px;
 }
 
 .search-box { 
