@@ -132,6 +132,12 @@ body {
   padding: 0 1rem; 
 }
 
+.auth-link {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--text-secondary);
+}
+
 .auth-container { 
   min-height:80vh; 
   display:flex; 
