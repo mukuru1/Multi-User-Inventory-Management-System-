@@ -81,3 +81,11 @@ body {
   align-items:center; 
   justify-content:center; 
 }
+
+.auth-card { 
+  width:360px; 
+  background:var(--bg-secondary); 
+  padding:1.25rem; 
+  border-radius:10px; 
+  box-shadow: 0 6px 18px var(--shadow); 
+}
