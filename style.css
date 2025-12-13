@@ -152,6 +152,10 @@ body {
   border-color: var(--primary);
 }
 
+.form-group input.error {
+  border-color: var(--danger);
+}
+
 label { 
   font-size:0.9rem; 
   margin-bottom:0.25rem; 
