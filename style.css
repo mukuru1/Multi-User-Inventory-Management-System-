@@ -483,6 +483,11 @@ tbody tr:hover {
   transition: all 0.2s ease;
 }
 
+.close-modal:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
 /* Dark theme */
 body.dark { 
   --bg-primary: #0f1724; 
