@@ -403,6 +403,21 @@ tbody tr:hover {
   color: #856404;
 }
 
+[data-theme="dark"] .status-available {
+  background-color: #1e4620;
+  color: #7ef07e;
+}
+
+[data-theme="dark"] .status-out-of-stock {
+  background-color: #5a1f1f;
+  color: #ff8080;
+}
+
+[data-theme="dark"] .status-pending {
+  background-color: #4a3f1a;
+  color: #ffd966;
+}
+
 .empty-state { 
   text-align:center; 
   padding:1.5rem; 
