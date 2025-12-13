@@ -556,6 +556,10 @@ tbody tr:hover {
   display: none;
 }
 
+.tab-content.active {
+  display: block;
+}
+
 /* Dark theme */
 body.dark { 
   --bg-primary: #0f1724; 
