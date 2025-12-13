@@ -146,6 +146,12 @@ body {
   transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
 label { 
   font-size:0.9rem; 
   margin-bottom:0.25rem; 
