@@ -354,6 +354,8 @@ input[type=text], input[type=password], input[type=number], input[type=tel], sel
   padding:1rem; 
   border-radius:8px; 
   box-shadow: 0 6px 18px var(--shadow); 
+  overflow: hidden;
+  box-shadow: 0 2px 8px var(--shadow);
 }
 
 table { 
