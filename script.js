@@ -8,3 +8,11 @@ function showAlert(message, type = 'danger') {
         alertBox.classList.remove('show');
     }, 5000);
 }
+
+function showError(elementId, message) {
+    const errorElement = document.getElementById(elementId);
+    const inputElement = document.getElementById(elementId.replace('Error', ''));
+    errorElement.textContent = message;
+    errorElement.classList.add('show');
+    inputElement.classList.add('error');
+}
