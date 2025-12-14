@@ -160,6 +160,8 @@ const searchInput = document.getElementById('searchInput');
 const statusFilter = document.getElementById('statusFilter');
 const themeToggle = document.getElementById('themeToggle');
 
+if (logoutBtn) logoutBtn.addEventListener('click', () => { clearCurrentUser(); window.location.href = 'login.html'; });
+
    function showAlert(message, type = 'danger') {
     alertBox.textContent = message;
     alertBox.className = `alert alert-${type} show`;
