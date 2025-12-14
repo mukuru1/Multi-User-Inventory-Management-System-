@@ -239,3 +239,18 @@ function applyStoredTheme() {
 		if (addBtn) addBtn.addEventListener('click', () => { openModal(); });
 		if (closeModal) closeModal.addEventListener('click', closeItemModal);
 		if (itemModal) itemModal.addEventListener('click', (e) => { if (e.target === itemModal) closeItemModal(); });
+
+
+        let editingId = null;
+		function getUserItems() { const inv = getInventories(); return inv[current] || []; }
+		function saveUserItems(items) { const inv = getInventories(); inv[current] = items; saveInventories(inv); }
+
+		function renderItems() {
+			const items = getUserItems();
+			const q = (searchInput && searchInput.value.trim().toLowerCase()) || '';
+			const status = (statusFilter && statusFilter.value) || '';
+			const filtered = items.filter(i => {
+				const matchesName = !q || i.name.toLowerCase().includes(q);
+				const matchesStatus = !status || i.status === status;
+				return matchesName && matchesStatus;
+			});
