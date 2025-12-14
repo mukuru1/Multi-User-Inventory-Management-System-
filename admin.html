@@ -41,3 +41,38 @@
                 <div class="stat-value" id="outOfStockItems">0</div>
             </div>
         </div>
+
+        <div class="tabs">
+            <button class="tab active" data-tab="users">Users Management</button>
+            <button class="tab" data-tab="inventory">All Inventory</button>
+        </div>
+
+        <div class="tab-content active" id="users-content">
+            <div class="inventory-controls">
+                <input
+                    type="text"
+                    id="userSearchInput"
+                    class="search-box"
+                    placeholder="Search users by name or username...">
+                <button id="addUserBtn" class="btn btn-primary">+ Add New User</button>
+            </div>
+
+            <div class="inventory-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Role</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usersBody"></tbody>
+                </table>
+                <div id="usersEmptyState" class="empty-state" style="display: none;">
+                    <h2>No users found</h2>
+                    <p>No users match your search criteria</p>
+                </div>
+            </div>
+        </div>
