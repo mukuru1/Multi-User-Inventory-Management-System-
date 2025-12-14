@@ -318,3 +318,5 @@ function applyStoredTheme() {
                 items.push({ id: Date.now(), name, quantity: Number(qty), price: Number(price), status });
                 saveUserItems(items); showAlert(alertBox, 'Item added', 'success');
             }
+            renderItems(); closeItemModal();
+		});
