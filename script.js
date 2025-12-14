@@ -344,3 +344,19 @@ function applyStoredTheme() {
 				usersTable.appendChild(tr);
 			});
 		} }
+
+		function renderAllItems() {
+			const inv = getInventories(); if (!allItemsBody) return;
+			const uFilter = filterUser && filterUser.value;
+			const sFilter = filterStatus && filterStatus.value;
+			allItemsBody.innerHTML = '';
+			Object.keys(inv).forEach(username => {
+				if (uFilter && uFilter !== username) return;
+				inv[username].forEach(it => {
+					if (sFilter && sFilter !== it.status) return;
+					const tr = document.createElement('tr');
+					tr.innerHTML = `<td>${escapeHtml(it.name)}</td><td>${it.quantity}</td><td>$${Number(it.price).toFixed(2)}</td><td>${it.status}</td><td>${escapeHtml(username)}</td>`;
+					allItemsBody.appendChild(tr);
+				});
+			});
+		}
