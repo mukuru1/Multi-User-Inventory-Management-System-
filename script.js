@@ -276,3 +276,22 @@ function applyStoredTheme() {
 				inventoryBody.appendChild(tr);
 			});
 		}
+
+        function escapeHtml(s){ return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+		
+		if (inventoryBody) inventoryBody.addEventListener('click', (e) => {
+			const btn = e.target.closest('button'); if (!btn) return;
+			const action = btn.getAttribute('data-action'); const id = btn.getAttribute('data-id');
+			if (action === 'edit') {
+				const items = getUserItems(); const it = items.find(x => x.id === id); if (!it) return;
+				document.getElementById('itemName').value = it.name;
+				document.getElementById('itemQuantity').value = it.quantity;
+				document.getElementById('itemPrice').value = it.price;
+				document.getElementById('itemStatus').value = it.status;
+				editingId = it.id; document.getElementById('modalTitle').textContent = 'Edit Item'; openModal();
+			} else if (action === 'delete') {
+				if (!confirm('Delete this item?')) return;
+				let items = getUserItems(); items = items.filter(x => x.id !== id); saveUserItems(items); renderItems(); showAlert(alertBox, 'Item deleted', 'success');
+			}
+		});
