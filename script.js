@@ -184,3 +184,29 @@ function updateThemeButton(theme) {
         themeText.textContent = 'Dark';
     }
 }
+
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeButton(newTheme);
+}
+
+themeToggle.addEventListener('click', toggleTheme);
+
+document.addEventListener('keydown', (e) => {
+    if (e.ctrlKey && e.key === 'b') {
+        e.preventDefault();
+        toggleTheme();
+    }
+});
+
+function checkAuth() {
+    const userStr = localStorage.getItem('currentUser');
+    if (!userStr) {
+        window.location.href = 'login.html';
+        return null;
+    }
+    return JSON.parse(userStr);
+}
