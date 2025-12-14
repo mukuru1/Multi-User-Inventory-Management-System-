@@ -325,4 +325,22 @@ function applyStoredTheme() {
 		if (statusFilter) statusFilter.addEventListener('change', renderItems);
 		renderItems();
 
-		
+		function initAdmin() {
+		const current = getCurrentUser(); if (!current) return;
+		const usersTable = document.getElementById('usersTable');
+		const addUserForm = document.getElementById('addUserForm');
+		const alertBox = document.getElementById('alertBox');
+		const allItemsBody = document.getElementById('allItemsBody');
+		const filterUser = document.getElementById('filterUser');
+		const filterStatus = document.getElementById('filterStatus');
+		if (!usersTable && !addUserForm && !allItemsBody) return; // nothing to do
+
+		function renderUsers() {
+			const users = getUsers(); if (!usersTable) return;
+			usersTable.innerHTML = '';
+			users.forEach(u => {
+				const tr = document.createElement('tr');
+				tr.innerHTML = `<td>${escapeHtml(u.username)}</td><td>${escapeHtml(u.names)}</td><td>${escapeHtml(u.phone)}</td><td>${u.isAdmin? 'Admin':'User'}</td><td><button class="btn btn-sm" data-action="edit-user" data-username="${u.username}">Edit</button> <button class="btn btn-sm btn-danger" data-action="delete-user" data-username="${u.username}">Delete</button></td>`;
+				usersTable.appendChild(tr);
+			});
+		} }
