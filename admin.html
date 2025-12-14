@@ -76,3 +76,23 @@
                 </div>
             </div>
         </div>
+
+        <div class="tab-content" id="inventory-content">
+            <div class="inventory-controls">
+                <div class="search-filter-group">
+                    <input
+                        type="text"
+                        id="itemSearchInput"
+                        class="search-box"
+                        placeholder="Search items by name...">
+                    <select id="userFilter" class="form-group input">
+                        <option value="">All Users</option>
+                    </select>
+                </div>
+                <select id="itemStatusFilter" class="form-group input">
+                    <option value="">All Status</option>
+                    <option value="Available">Available</option>
+                    <option value="Out of Stock">Out of Stock</option>
+                    <option value="Pending">Pending</option>
+                </select>
+            </div>
