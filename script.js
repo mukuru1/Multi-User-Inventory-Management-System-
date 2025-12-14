@@ -343,7 +343,7 @@ function applyStoredTheme() {
 				tr.innerHTML = `<td>${escapeHtml(u.username)}</td><td>${escapeHtml(u.names)}</td><td>${escapeHtml(u.phone)}</td><td>${u.isAdmin? 'Admin':'User'}</td><td><button class="btn btn-sm" data-action="edit-user" data-username="${u.username}">Edit</button> <button class="btn btn-sm btn-danger" data-action="delete-user" data-username="${u.username}">Delete</button></td>`;
 				usersTable.appendChild(tr);
 			});
-		} }
+		} 
 
 		function renderAllItems() {
 			const inv = getInventories(); if (!allItemsBody) return;
@@ -388,4 +388,5 @@ function applyStoredTheme() {
 		renderUsers(); renderAllItems();
 		if (filterUser) filterUser.addEventListener('change', renderAllItems);
 		if (filterStatus) filterStatus.addEventListener('change', renderAllItems);
+	}
 	
