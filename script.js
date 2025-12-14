@@ -160,5 +160,17 @@ const searchInput = document.getElementById('searchInput');
 const statusFilter = document.getElementById('statusFilter');
 const themeToggle = document.getElementById('themeToggle');
 
-   
+   function showAlert(message, type = 'danger') {
+    alertBox.textContent = message;
+    alertBox.className = `alert alert-${type} show`;
+    setTimeout(() => {
+        alertBox.classList.remove('show');
+    }, 5000);
+}
+
+function initTheme() {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    updateThemeButton(savedTheme);
+}
 
