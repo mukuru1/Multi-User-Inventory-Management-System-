@@ -23,3 +23,9 @@ function clearError(elementId) {
     errorElement.classList.remove('show');
     inputElement.classList.remove('error');
 }
+
+function clearAllErrors() {
+    ['username', 'name', 'phone', 'password', 'confirmPassword'].forEach(field => {
+        clearError(field + 'Error');
+    });
+}
