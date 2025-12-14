@@ -30,3 +30,12 @@ function clearAllErrors() {
     });
 }
 
+function validateName(name) {
+    const nameRegex = /^[a-zA-Z\s]+$/;
+    return nameRegex.test(name) && name.trim().length > 0;
+}
+
+function validatePhone(phone) {
+    const phoneRegex = /^[\d\s\-\+\(\)]+$/;
+    return phoneRegex.test(phone) && phone.replace(/\D/g, '').length >= 10;
+}
