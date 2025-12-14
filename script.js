@@ -75,3 +75,37 @@ function validateForm(formData) {
 
     return isValid;
 }
+
+function initRegister() {
+		const form = document.getElementById('registerForm');
+		const alertBox = document.getElementById('alertBox');
+		if (!form) return;
+		form.addEventListener('submit', function (e) {
+			e.preventDefault();
+			const username = form.username.value.trim();
+			const names = form.name.value.trim();
+			const phone = form.phone.value.trim();
+			const password = form.password.value;
+			if (!username || !names || !password)
+
+                 return showAlert(alertBox, 'Please fill out all fields', 'error');
+			const users = getUsers();
+			if (users.find(u => u.username === username))
+                
+                return showAlert(alertBox, 'Username already exists', 'error');
+			users.push({ username, names, phone, password, isAdmin:false });
+			saveUsers(users);
+			const inv = getInventories(); inv[username] = []; saveInventories(inv);
+			showAlert(alertBox, 'Registration successful. You can now login.', 'success');
+			form.reset();
+			setTimeout(() => { window.location.href = 'login.html'; }, 900);
+		});
+	}
+
+    function showError(elementId, message) {
+    const errorElement = document.getElementById(elementId);
+    const inputElement = document.getElementById(elementId.replace('Error', ''));
+    errorElement.textContent = message;
+    errorElement.classList.add('show');
+    inputElement.classList.add('error');
+}
