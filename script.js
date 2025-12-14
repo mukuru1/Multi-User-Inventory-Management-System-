@@ -1,5 +1,6 @@
 const registerForm = document.getElementById('registerForm');
 const alertBox = document.getElementById('alertBox');
+const loginForm = document.getElementById('loginForm');
 
 function showAlert(message, type = 'danger') {
     alertBox.textContent = message;
@@ -101,8 +102,6 @@ function initRegister() {
 			setTimeout(() => { window.location.href = 'login.html'; }, 900);
 		});
 	}
-
-    const loginForm = document.getElementById('loginForm');
 
 function showAlert(message, type = 'danger') {
     alertBox.textContent = message;
