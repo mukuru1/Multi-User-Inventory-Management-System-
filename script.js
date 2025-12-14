@@ -224,3 +224,12 @@ function applyStoredTheme() {
 			localStorage.setItem(key, isDark ? 'dark' : 'light');
 			if (themeText) themeText.textContent = isDark ? 'Light' : 'Dark';
 		});
+
+        document.addEventListener('keydown', (ev) => {
+			if (ev.ctrlKey && ev.key.toLowerCase() === 'j') {
+				const key = THEME_KEY_PREFIX + current;
+				const isDark = document.body.classList.toggle('dark');
+				localStorage.setItem(key, isDark ? 'dark' : 'light');
+				if (themeText) themeText.textContent = isDark ? 'Light' : 'Dark';
+			}
+		});
