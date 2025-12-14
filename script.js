@@ -295,3 +295,26 @@ function applyStoredTheme() {
 				let items = getUserItems(); items = items.filter(x => x.id !== id); saveUserItems(items); renderItems(); showAlert(alertBox, 'Item deleted', 'success');
 			}
 		});
+
+        if (itemForm) itemForm.addEventListener('submit', (e) => {
+			e.preventDefault();
+			const name = document.getElementById('itemName').value.trim();
+			const qty = document.getElementById('itemQuantity').value;
+			const price = document.getElementById('itemPrice').value;
+			const status = document.getElementById('itemStatus').value;
+			if (!validItemName(name)) return showAlert(alertBox, 'Name required and should contain only letters', 'error');
+			if (!positiveNumber(qty)) return showAlert(alertBox, 'Quantity must be a positive number', 'error');
+			if (!positiveNumber(price)) return showAlert(alertBox, 'Price must be a positive number', 'error');
+			if (!status) return showAlert(alertBox, 'Status is required', 'error');
+
+			const items = getUserItems();
+			if (editingId) {
+				const idx = items.findIndex(x => x.id === editingId);
+				if (idx > -1) {
+					items[idx] = { ...items[idx], name, quantity: Number(qty), price: Number(price), status };
+					saveUserItems(items); showAlert(alertBox, 'Item updated', 'success');
+				}
+            } else {
+                items.push({ id: Date.now(), name, quantity: Number(qty), price: Number(price), status });
+                saveUserItems(items); showAlert(alertBox, 'Item added', 'success');
+            }
