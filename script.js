@@ -360,3 +360,16 @@ function applyStoredTheme() {
 				});
 			});
 		}
+
+		if (addUserForm) addUserForm.addEventListener('submit', (e) => {
+			e.preventDefault();
+			const username = addUserForm.username.value.trim();
+			const names = addUserForm.name.value.trim();
+			const phone = addUserForm.phone.value.trim();
+			const password = addUserForm.password.value;
+			if (!username || !names || !password) return showAlert(alertBox, 'Fill all fields', 'error');
+			const users = getUsers(); if (users.find(u => u.username === username)) return showAlert(alertBox, 'Username exists', 'error');
+			users.push({ username, names, phone, password, isAdmin:false }); saveUsers(users);
+			const inv = getInventories(); inv[username] = []; saveInventories(inv);
+			showAlert(alertBox, 'User added', 'success'); addUserForm.reset(); renderUsers();
+		});
