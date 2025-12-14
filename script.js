@@ -17,10 +17,9 @@ function showError(elementId, message) {
     inputElement.classList.add('error');
 }
 
-function clearErrors() {
-    const errorElements = document.querySelectorAll('.error-message');
-    errorElements.forEach(element => {
-        element.textContent = '';
-        element.classList.remove('show');
-    });
+function clearError(elementId) {
+    const errorElement = document.getElementById(elementId);
+    const inputElement = document.getElementById(elementId.replace('Error', ''));
+    errorElement.classList.remove('show');
+    inputElement.classList.remove('error');
 }
