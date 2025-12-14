@@ -210,3 +210,17 @@ function checkAuth() {
     }
     return JSON.parse(userStr);
 }
+
+function applyStoredTheme() {
+			const key = THEME_KEY_PREFIX + current;
+			const t = localStorage.getItem(key) || localStorage.getItem('ims_theme_global') || 'light';
+			document.body.classList.toggle('dark', t === 'dark');
+			if (themeText) themeText.textContent = t === 'dark' ? 'Light' : 'Dark';
+		}
+		applyStoredTheme();
+		if (themeToggle) themeToggle.addEventListener('click', () => {
+			const key = THEME_KEY_PREFIX + current;
+			const isDark = document.body.classList.toggle('dark');
+			localStorage.setItem(key, isDark ? 'dark' : 'light');
+			if (themeText) themeText.textContent = isDark ? 'Light' : 'Dark';
+		});
