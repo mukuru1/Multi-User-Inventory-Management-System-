@@ -126,3 +126,25 @@ function clearError(elementId) {
     inputElement.classList.remove('error');
 }
 
+function initLogin() {
+		const form = document.getElementById('loginForm');
+		const alertBox = document.getElementById('alertBox');
+		if (!form)
+             return;
+		form.addEventListener('submit', function (e) {
+			e.preventDefault();
+			const username = form.username.value.trim();
+			const password = form.password.value;
+			const users = getUsers();
+			const user = users.find(u => u.username === username && u.password === password);
+			if (!user)
+                 return showAlert(alertBox, 'Invalid credentials', 'error');
+			setCurrentUser(user.username);
+			showAlert(alertBox, 'Login successful', 'success');
+			setTimeout(() => {
+				if (user.isAdmin) window.location.href = 'admin.html';
+				else window.location.href = 'invetory.html';
+			}, 700);
+		});
+	}
+
