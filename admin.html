@@ -1,18 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Admin Dashboard</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Inventory Management System</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
-<body onload="renderUsers()">
-<h2>Admin Dashboard</h2>
-<h3>Users</h3>
-<table>
-<thead>
-<tr><th>Username</th><th>Name</th><th>Phone</th><th>Action</th></tr>
-</thead>
-<tbody id="usersBody"></tbody>
-</table>
-<script src="script.js"></script>
-</body>
-</html>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h1>Admin Dashboard</h1>
+            <div class="header-actions">
+                <span class="user-info">Welcome, <strong id="userName"></strong></span>
+                <button id="themeToggle" class="theme-toggle">
+                    <span id="themeText">Dark</span>
+                </button>
+                <button id="logoutBtn" class="btn btn-danger btn-sm">Logout</button>
+            </div>
+        </div>
+    </header>
