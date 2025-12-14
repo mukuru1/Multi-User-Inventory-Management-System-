@@ -43,3 +43,35 @@ function validatePhone(phone) {
 function validatePassword(password) {
     return password.length >= 6;
 }
+
+function validateForm(formData) {
+    let isValid = true;
+    clearAllErrors();
+
+    if (!formData.username.trim()) {
+        showError('usernameError', 'Username is required');
+        isValid = false;
+    }
+
+    if (!validateName(formData.name)) {
+        showError('nameError', 'Name must contain only letters');
+        isValid = false;
+    }
+
+    if (!validatePhone(formData.phone)) {
+        showError('phoneError', 'Please enter a valid phone number');
+        isValid = false;
+    }
+
+    if (!validatePassword(formData.password)) {
+        showError('passwordError', 'Password must be at least 6 characters');
+        isValid = false;
+    }
+
+    if (formData.password !== formData.confirmPassword) {
+        showError('confirmPasswordError', 'Passwords do not match');
+        isValid = false;
+    }
+
+    return isValid;
+}
