@@ -148,5 +148,17 @@ function initLogin() {
 		});
 	}
 
+    let currentUser = null;
+let allItems = [];
+let editingItemId = null;
+
+const itemModal = document.getElementById('itemModal');
+const itemForm = document.getElementById('itemForm');
+const inventoryBody = document.getElementById('inventoryBody');
+const emptyState = document.getElementById('emptyState');
+const searchInput = document.getElementById('searchInput');
+const statusFilter = document.getElementById('statusFilter');
+const themeToggle = document.getElementById('themeToggle');
+
    
 
