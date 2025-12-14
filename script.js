@@ -384,3 +384,8 @@ function applyStoredTheme() {
 			}
 			// edit-user could be implemented with a modal; skip for brevity unless UI exists
 		});
+
+		renderUsers(); renderAllItems();
+		if (filterUser) filterUser.addEventListener('change', renderAllItems);
+		if (filterStatus) filterStatus.addEventListener('change', renderAllItems);
+	
