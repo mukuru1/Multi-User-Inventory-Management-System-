@@ -373,3 +373,14 @@ function applyStoredTheme() {
 			const inv = getInventories(); inv[username] = []; saveInventories(inv);
 			showAlert(alertBox, 'User added', 'success'); addUserForm.reset(); renderUsers();
 		});
+
+	if (usersTable) usersTable.addEventListener('click', (e) => {
+			const btn = e.target.closest('button'); if (!btn) return; const action = btn.getAttribute('data-action'); const username = btn.getAttribute('data-username');
+			if (action === 'delete-user') {
+				if (!confirm('Delete user and their items?')) return;
+				let users = getUsers(); users = users.filter(u => u.username !== username); saveUsers(users);
+				const inv = getInventories(); delete inv[username]; saveInventories(inv);
+				showAlert(alertBox, 'User deleted', 'success'); renderUsers(); renderAllItems();
+			}
+			// edit-user could be implemented with a modal; skip for brevity unless UI exists
+		});
