@@ -16,3 +16,11 @@ function showError(elementId, message) {
     errorElement.classList.add('show');
     inputElement.classList.add('error');
 }
+
+function clearErrors() {
+    const errorElements = document.querySelectorAll('.error-message');
+    errorElements.forEach(element => {
+        element.textContent = '';
+        element.classList.remove('show');
+    });
+}
