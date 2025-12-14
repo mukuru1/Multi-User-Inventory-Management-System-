@@ -254,3 +254,25 @@ function applyStoredTheme() {
 				const matchesStatus = !status || i.status === status;
 				return matchesName && matchesStatus;
 			});
+
+            if (!inventoryBody) return;
+			inventoryBody.innerHTML = '';
+			if (filtered.length === 0) {
+				if (emptyState) emptyState.style.display = 'block';
+				return;
+			}
+			if (emptyState) emptyState.style.display = 'none';
+			filtered.forEach(it => {
+				const tr = document.createElement('tr');
+				tr.innerHTML = `
+					<td>${escapeHtml(it.name)}</td>
+					<td>${it.quantity}</td>
+					<td>$${Number(it.price).toFixed(2)}</td>
+					<td>${it.status}</td>
+					<td>
+						<button class="btn btn-sm" data-action="edit" data-id="${it.id}">Edit</button>
+						<button class="btn btn-sm btn-danger" data-action="delete" data-id="${it.id}">Delete</button>
+					</td>`;
+				inventoryBody.appendChild(tr);
+			});
+		}
