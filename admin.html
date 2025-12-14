@@ -96,3 +96,24 @@
                     <option value="Pending">Pending</option>
                 </select>
             </div>
+
+            <div class="inventory-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Owner</th>
+                            <th>Item Name</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="itemsBody"></tbody>
+                </table>
+                <div id="itemsEmptyState" class="empty-state" style="display: none;">
+                    <h2>No items found</h2>
+                    <p>No inventory items match your search criteria</p>
+                </div>
+            </div>
+        </div>
+    </div>
