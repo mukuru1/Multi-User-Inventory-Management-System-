@@ -233,3 +233,9 @@ function applyStoredTheme() {
 				if (themeText) themeText.textContent = isDark ? 'Light' : 'Dark';
 			}
 		});
+
+        function openModal() { if (itemModal) itemModal.classList.add('show'); }
+		function closeItemModal() { if (itemModal) itemModal.classList.remove('show'); itemForm && itemForm.reset(); editingId = null; document.getElementById('modalTitle') && (document.getElementById('modalTitle').textContent = 'Add New Item'); }
+		if (addBtn) addBtn.addEventListener('click', () => { openModal(); });
+		if (closeModal) closeModal.addEventListener('click', closeItemModal);
+		if (itemModal) itemModal.addEventListener('click', (e) => { if (e.target === itemModal) closeItemModal(); });
