@@ -39,3 +39,7 @@ function validatePhone(phone) {
     const phoneRegex = /^[\d\s\-\+\(\)]+$/;
     return phoneRegex.test(phone) && phone.replace(/\D/g, '').length >= 10;
 }
+
+function validatePassword(password) {
+    return password.length >= 6;
+}
