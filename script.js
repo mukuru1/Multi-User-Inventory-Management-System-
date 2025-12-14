@@ -314,9 +314,49 @@ function applyStoredTheme() {
 					items[idx] = { ...items[idx], name, quantity: Number(qty), price: Number(price), status };
 					saveUserItems(items); showAlert(alertBox, 'Item updated', 'success');
 				}
-            } else {
-                items.push({ id: Date.now(), name, quantity: Number(qty), price: Number(price), status });
-                saveUserItems(items); showAlert(alertBox, 'Item added', 'success');
-            }
-            renderItems(); closeItemModal();
+			} else {
+				items.push({ id: generateId(), name, quantity: Number(qty), price: Number(price), status });
+				saveUserItems(items); showAlert(alertBox, 'Item added', 'success');
+			}
+			renderItems(); closeItemModal();
 		});
+
+		if (searchInput) searchInput.addEventListener('input', renderItems);
+		if (statusFilter) statusFilter.addEventListener('change', renderItems);
+		renderItems();
+
+		function initAdmin() {
+		const current = getCurrentUser(); if (!current) return;
+		const usersTable = document.getElementById('usersTable');
+		const addUserForm = document.getElementById('addUserForm');
+		const alertBox = document.getElementById('alertBox');
+		const allItemsBody = document.getElementById('allItemsBody');
+		const filterUser = document.getElementById('filterUser');
+		const filterStatus = document.getElementById('filterStatus');
+		if (!usersTable && !addUserForm && !allItemsBody) return; // nothing to do
+
+		function renderUsers() {
+			const users = getUsers(); if (!usersTable) return;
+			usersTable.innerHTML = '';
+			users.forEach(u => {
+				const tr = document.createElement('tr');
+				tr.innerHTML = `<td>${escapeHtml(u.username)}</td><td>${escapeHtml(u.names)}</td><td>${escapeHtml(u.phone)}</td><td>${u.isAdmin? 'Admin':'User'}</td><td><button class="btn btn-sm" data-action="edit-user" data-username="${u.username}">Edit</button> <button class="btn btn-sm btn-danger" data-action="delete-user" data-username="${u.username}">Delete</button></td>`;
+				usersTable.appendChild(tr);
+			});
+		}
+
+		function renderAllItems() {
+			const inv = getInventories(); if (!allItemsBody) return;
+			const uFilter = filterUser && filterUser.value;
+			const sFilter = filterStatus && filterStatus.value;
+			allItemsBody.innerHTML = '';
+			Object.keys(inv).forEach(username => {
+				if (uFilter && uFilter !== username) return;
+				inv[username].forEach(it => {
+					if (sFilter && sFilter !== it.status) return;
+					const tr = document.createElement('tr');
+					tr.innerHTML = `<td>${escapeHtml(it.name)}</td><td>${it.quantity}</td><td>$${Number(it.price).toFixed(2)}</td><td>${it.status}</td><td>${escapeHtml(username)}</td>`;
+					allItemsBody.appendChild(tr);
+				});
+			});
+		}

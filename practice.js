@@ -237,7 +237,7 @@
 		// Initial render
 		renderItems();
 	}
-
+ 
 	// Admin functions (only active if admin page elements exist)
 	function initAdmin() {
 		const current = getCurrentUser(); if (!current) return;
