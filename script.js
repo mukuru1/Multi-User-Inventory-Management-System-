@@ -333,7 +333,7 @@ function applyStoredTheme() {
 		const allItemsBody = document.getElementById('allItemsBody');
 		const filterUser = document.getElementById('filterUser');
 		const filterStatus = document.getElementById('filterStatus');
-		if (!usersTable && !addUserForm && !allItemsBody) return; // nothing to do
+		if (!usersTable && !addUserForm && !allItemsBody) return; 
 
 		function renderUsers() {
 			const users = getUsers(); if (!usersTable) return;
@@ -382,11 +382,39 @@ function applyStoredTheme() {
 				const inv = getInventories(); delete inv[username]; saveInventories(inv);
 				showAlert(alertBox, 'User deleted', 'success'); renderUsers(); renderAllItems();
 			}
-			// edit-user could be implemented with a modal; skip for brevity unless UI exists
 		});
 
 		renderUsers(); renderAllItems();
 		if (filterUser) filterUser.addEventListener('change', renderAllItems);
 		if (filterStatus) filterStatus.addEventListener('change', renderAllItems);
 	}
+
+	document.addEventListener('DOMContentLoaded', function () {
+		seedAdmin(); 
+		const cur = getCurrentUser();
+		if (!cur) {
+			const t = localStorage.getItem('ims_theme_global') || 'light';
+			document.body.classList.toggle('dark', t === 'dark');
+			document.addEventListener('keydown', (ev) => { if (ev.ctrlKey && ev.key.toLowerCase() === 'j') { const isDark = document.body.classList.toggle('dark'); localStorage.setItem('ims_theme_global', isDark ? 'dark' : 'light'); } });
+		}
+
+		initRegister();
+		initLogin();
+
+		if (document.title && document.title.toLowerCase().includes('inventory')) {
+			if (!getCurrentUser()) { window.location.href = 'login.html'; return; }
+			initInventory();
+		}
+
+		
+		if (document.title && document.title.toLowerCase().includes('admin')) {
+			const user = getCurrentUser(); if (!user) { window.location.href = 'login.html'; return; }
+			const users = getUsers(); const u = users.find(x => x.username === user);
+			if (!u || !u.isAdmin) { window.location.href = 'invetory.html'; return; }
+			initAdmin();
+		}
+	});
+
+
+		
 	
