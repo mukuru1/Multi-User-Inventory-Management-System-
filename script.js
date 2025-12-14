@@ -176,3 +176,11 @@ function initTheme() {
     updateThemeButton(savedTheme);
 }
 
+function updateThemeButton(theme) {
+    const themeText = document.getElementById('themeText');
+    if (theme === 'dark') {
+        themeText.textContent = 'Light';
+    } else {
+        themeText.textContent = 'Dark';
+    }
+}
