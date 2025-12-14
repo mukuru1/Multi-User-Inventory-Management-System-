@@ -119,3 +119,10 @@ function showAlert(message, type = 'danger') {
     inputElement.classList.add('error');
 }
 
+function clearError(elementId) {
+    const errorElement = document.getElementById(elementId);
+    const inputElement = document.getElementById(elementId.replace('Error', ''));
+    errorElement.classList.remove('show');
+    inputElement.classList.remove('error');
+}
+
