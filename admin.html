@@ -137,3 +137,35 @@
                     <input type="text" id="userNameInput" name="userName" required>
                     <span class="error-message" id="userNameError"></span>
                 </div>
+
+                <div class="form-group">
+                    <label for="userPhone">Phone Number</label>
+                    <input type="tel" id="userPhone" name="userPhone" required>
+                    <span class="error-message" id="userPhoneError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="userPassword">Password</label>
+                    <input type="password" id="userPassword" name="userPassword">
+                    <span class="error-message" id="userPasswordError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="userRole">Role</label>
+                    <select id="userRole" name="userRole" required>
+                        <option value="user">User</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancelUserBtn">Cancel</button>
+                    <button type="submit" class="btn btn-success" id="submitUserBtn">Save User</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="admin.js"></script>
+</body>
+</html>
